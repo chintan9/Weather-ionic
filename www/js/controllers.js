@@ -1,5 +1,5 @@
 angular.module('starter.controllers', ['ionic'])
-    .constant('FORECASTIO_KEY', '0304c1b52edb7c4a0da2de2ae40c5e7a')
+    .constant('FORECASTIO_KEY', '0250858eac2128a369e90dea6a893431')
     .controller('HomeCtrl', function($scope, $state, Weather, DataStore) {
         //read default settings into scope
         console.log('inside home');

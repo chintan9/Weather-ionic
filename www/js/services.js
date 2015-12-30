@@ -27,12 +27,12 @@ angular.module('starter.services', ['ngResource'])
             id: 0,
             name: 'Miami',
             lat: 25.7877,
-            lgn: 80.2241
+            lgn: -80.2241
         }, {
             id: 1,
             name: 'New York City',
             lat: 40.7127,
-            lgn: 74.0059
+            lgn: -74.0059
         }, {
             id: 2,
             name: 'London',
@@ -42,12 +42,12 @@ angular.module('starter.services', ['ngResource'])
             id: 3,
             name: 'Los Angeles',
             lat: 34.0500,
-            lgn: 118.2500
+            lgn: -118.2500
         }, {
             id: 4,
             name: 'Dallas',
             lat: 32.7758,
-            lgn: 96.7967
+            lgn: -96.7967
         }, {
             id: 5,
             name: 'Frankfurt',
@@ -75,7 +75,7 @@ factory('DataStore', function() {
         var DataStore = {
             city: 'Miami',
             latitude: 25.7877,
-            longitude: 80.2241
+            longitude: -80.2241
         };
 
         DataStore.setCity = function(value) {
