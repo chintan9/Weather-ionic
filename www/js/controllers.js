@@ -10,7 +10,7 @@ angular.module('starter.controllers', ['ionic']).constant('FORECASTIO_KEY', '025
       $scope.current = resp.data;
       //var minutedata = resp.data.minutely.data;
       console.log('GOT CURRENT', $scope.current);
-      console.log('GOT MINUTEDATA', $scope.current.minutely.data);
+    //  console.log('GOT MINUTEDATA', $scope.current.minutely.data);
       //debugger;
     }, function(error) {
       alert('Unable to get current conditions');

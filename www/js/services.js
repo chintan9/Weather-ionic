@@ -31,8 +31,8 @@ angular.module('starter.services', ['ngResource'])
         }, {
             id: 1,
             name: 'New York City',
-            lat: 40.7127,
-            lgn: -74.0059
+            lat: 40.7142,
+            lgn: -74.0064
         }, {
             id: 2,
             name: 'London',
@@ -83,7 +83,7 @@ factory('DataStore', function() {
         };
 
         DataStore.setLatitude = function(value) {
-            DataStore.longitude = value;
+            DataStore.latitude = value;
         };
 
         DataStore.setLongitude = function(value) {
