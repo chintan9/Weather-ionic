@@ -1,9 +1,40 @@
-<ion-view title="Home" Adding cache-view="false" >
-  <ion-content class="has-header">
-    <!-- Display current location's weather data-->
-    <h3>{{city}}</h3>
-    <h5><weather-icon icon="current.icon" id="current-icon"></weather-icon> {{current.currently.summary}}</h5>
-    <p>The temperature now is</p>  
-  <span class="large">{{current.currently.temperature}} ° </span>
-  </ion-content>
+<ion-view title="Home" Adding cache-view="false">  
+    <ion-content class="has-header ">
+        <!-- Display current location's weather <data-->
+        <div class="button button-full">
+            <div class="row"><i class="col col-25"> </i>
+                <h4 class="col col-50">{{city}}</h4><span class="col col-25">{{current.currently.temperature}}°F </span></div>
+            <div class="row"><span class="center">{{current.currently.summary}}</span>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Right now</div>
+            <div class="item row">
+                <div class="col col-50">
+                    Windspeed </br>{{current.currently.windSpeed}} mph </div>
+                <div class=" col col-50">
+                    Visibility </br>{{current.currently.visibility}} miles
+                </div>
+            </div>
+            <div class="item row">
+                <div class="col col-50">
+                    The Cloudcover </br>{{current.currently.cloudCover * 100 | number : 2 }} %
+                </div>
+                <div class="col col-50">
+                    The Pressuring </br>{{current.currently.pressure}} bar
+                </div>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">In next hour</div>
+            <div id="chart"></div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">In next 24 hours</div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">In next days</div>
+        </div>
+        </div>
+    </ion-content>
 </ion-view>

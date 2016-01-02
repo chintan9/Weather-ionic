@@ -30,6 +30,15 @@
             }
           }
         })
+        .state('city.detail', {
+          url: '/detail/:CityId',
+          views: {
+            'city.detail': {
+              templateUrl: 'templates/city-detail.html',
+              controller: 'CityDetailCtrl'
+            }
+          }
+        })
         .state('tab.changecity', {
           url: '/city',
           views: {
@@ -51,3 +60,5 @@
     // if none of the above states are matched, use this as the fallback
       $urlRouterProvider.otherwise('/tab/home');
     });
+
+    
