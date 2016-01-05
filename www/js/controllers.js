@@ -8,14 +8,31 @@ angular.module('starter.controllers', ['ionic']).constant('FORECASTIO_KEY', '025
     //call getCurrentWeather method in factory ‘Weather’
     Weather.getCurrentWeather(latitude, longitude).then(function(resp) {
       $scope.current = resp.data;
-      //var minutedata = resp.data.minutely.data;
+      var minutedata = resp.data.minutely.data;
       console.log('GOT CURRENT', $scope.current);
+      console.log('got c3 test', minutedata);
+      c3.generate({
+      data: {
+        json: minutedata,
+        keys: {
+          // x: 'name', // it's possible to specify 'x' when category axis
+          value: ['precipIntensity'],
+        }
+      },
+      axis: {
+        x: {
+          // type: 'category'
+        }
+      }
+      //console.log(data.json);
+    });
       //  console.log('GOT MINUTEDATA', $scope.current.minutely.data);
       //debugger;
     }, function(error) {
       alert('Unable to get current conditions');
       console.error(error);
     });
+    
   }).controller('LocationsCtrl', function($scope, $state, Cities, DataStore) {
     $scope.cities = Cities.all();
     $scope.changeCity = function(cityId) {
