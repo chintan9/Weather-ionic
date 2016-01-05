@@ -1,4 +1,4 @@
-<ion-view title="Home" Adding cache-view="false">  
+<ion-view title="Home" Adding cache-view="false">
     <ion-content class="has-header ">
         <!-- Display current location's weather <data-->
         <div class="button button-full">
@@ -26,14 +26,26 @@
             </div>
         </div>
         <div class="list card">
-            <div class="item item-divider">In next hour</div>
+            <div class="item item-divider">In next hour
+                <p>
+                    {{current.minutely.summary}}
+                </p>
+            </div>
             <div id="chart"></div>
         </div>
         <div class="list card">
-            <div class="item item-divider">In next 24 hours</div>
+            <div class="item item-divider">In next 24 hours
+                <p>
+                    {{current.hourly.summary}}
+                </p>
+            </div>
         </div>
         <div class="list card">
-            <div class="item item-divider">In next days</div>
+            <div class="item item-divider">In next days
+                <p>
+                    {{current.daily.summary}}
+                </p>
+            </div>
         </div>
         </div>
     </ion-content>
