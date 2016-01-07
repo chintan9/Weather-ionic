@@ -20,11 +20,11 @@ var forecastioWeather = ['$q', '$resource', '$http', 'FORECASTIO_KEY',
 var DataStore = {
   city: 'Current Location',
   latitude: 25.7877,
-  longitude: -80.2241,
+  longitude: -80.2241
 };
 if('geolocation' in navigator){
    navigator.geolocation.getCurrentPosition(success);
-   // console.log("acquired location");
+    // console.log("acquired location");2
     console.log(DataStore);
 }
 function success(pos){

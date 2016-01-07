@@ -12,6 +12,7 @@ angular.module('starter.controllers', ['ionic']).constant('FORECASTIO_KEY', '025
       var hoursdata = resp.data.hourly.data;
       console.log('GOT CURRENT', $scope.current);
       console.log('got c3 test', minutedata);
+      console.log('GOT HOURSDATA', hoursdata);
       // chart min 
       c3.generate({
         bindto: '#chartmin',
@@ -38,7 +39,7 @@ angular.module('starter.controllers', ['ionic']).constant('FORECASTIO_KEY', '025
           json: hoursdata,
           keys: {
             // x: 'name', // it's possible to specify 'x' when category axis
-            value: ['precipIntensity'],
+            value: ['apparentTemperature'],
           }
         },
         axis: {
@@ -50,7 +51,6 @@ angular.module('starter.controllers', ['ionic']).constant('FORECASTIO_KEY', '025
           show: false
         }
       });
-      console.log('GOT HOURSDATA', hoursdata);
       //debugger;
     }, function(error) {
       alert('Unable to get current conditions');
