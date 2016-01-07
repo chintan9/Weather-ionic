@@ -24,6 +24,8 @@ var DataStore = {
 };
 if('geolocation' in navigator){
    navigator.geolocation.getCurrentPosition(success);
+   // console.log("acquired location");
+    console.log(DataStore);
 }
 function success(pos){
    DataStore.latitude = pos.coords.latitude;
@@ -80,8 +82,7 @@ angular.module('starter.services', ['ngResource']).factory('Cities', function() 
 }).
 factory('DataStore', function() {
   //create datastore with default values
-  //DataStore.latitude = 0.0;
-  console.log(DataStore.latitude);
+
   DataStore.setCity = function(value) {
     DataStore.city = value;
   };
