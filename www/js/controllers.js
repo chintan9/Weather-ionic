@@ -12,12 +12,13 @@ angular.module('starter.controllers', ['ionic']).constant('FORECASTIO_KEY', '025
       var minutedata = DataStore.data.minutely.data;
       var hoursdata = DataStore.data.hourly.data;
       console.log('GOT CURRENT', DataStore.data);
-      console.log('got c3 test', minutedata);
+      console.log('GOT MINTUEDATA', minutedata);
       console.log('GOT HOURSDATA', hoursdata);
       // chart min 
       c3.generate({
         bindto: '#chartmin',
         data: {
+          type: 'area-spline',
           json: minutedata,
           keys: {
             // x: 'name', // it's possible to specify 'x' when category axis
@@ -37,6 +38,7 @@ angular.module('starter.controllers', ['ionic']).constant('FORECASTIO_KEY', '025
       c3.generate({
         bindto: '#charthrs',
         data: {
+          type: 'area-spline',
           json: hoursdata,
           keys: {
             // x: 'name', // it's possible to specify 'x' when category axis
@@ -75,5 +77,5 @@ angular.module('starter.controllers', ['ionic']).constant('FORECASTIO_KEY', '025
   }).controller('SettingsCtrl', function($scope, $state, Weather, DataStore) {
     console.log("hi from settings");
     $scope.current = DataStore.data;
-   console.log('GOT CURRENT', $scope.current);
+    console.log('GOT CURRENT', $scope.current);
   });
