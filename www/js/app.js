@@ -1,4 +1,4 @@
-    angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+    angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ui.router'])
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -30,15 +30,15 @@
             }
           }
         })
-        .state('city.detail', {
-          url: '/detail/:CityId',
+        /*.state('tab.detail', {
+          url: '/detail/:id',
           views: {
-            'city.detail': {
-              templateUrl: 'templates/city-detail.html',
-              controller: 'CityDetailCtrl'
+            'tab-detail': {
+              templateUrl: 'templates/tab-detail.html',
+              controller: 'DetailCtrl'
             }
           }
-        })
+        })*/
         .state('tab.changecity', {
           url: '/city',
           views: {

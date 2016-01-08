@@ -25,38 +25,29 @@
                 </div>
             </div>
         </div>
-        <div class="list card">
-            <div class="item item-divider">In next hour
-                <p>
-                    {{current.minutely.summary}}
-                </p>
+        <div  ng-click="changePage()">
+            <div class="list card">
+                <div class="item item-divider">In next hour
+                    <p>
+                        {{current.minutely.summary}}
+                    </p>
+                </div>
+                <div id="chartmin"></div>
             </div>
-            <div id="chartmin"></div>
-        </div>
-        <div class="list card">
-            <div class="item item-divider">In next 24 hours
-                <p>
-                    {{current.hourly.summary}}
-                </p>
+            <div class="list card">
+                <div class="item item-divider">In next 24 hours
+                    <p>
+                        {{current.hourly.summary}}
+                    </p>
+                </div>
+                <div id="charthrs"></div>
             </div>
-        <ion-slide-box on-slide-changed="slideHasChanged($index)">
-  <ion-slide>
-    <div class="box blue"><h1>BLUE</h1></div>
-  </ion-slide>
-  <ion-slide>
-    <div class="box yellow"><h1>YELLOW</h1></div>
-  </ion-slide>
-  <ion-slide>
-    <div class="box pink"><h1>PINK</h1></div>
-  </ion-slide>
-</ion-slide-box>
-            <div id="charthrs"></div>
-        </div>
-        <div class="list card">
-            <div class="item item-divider">In next days
-                <p>
-                    {{current.daily.summary}}
-                </p>
+            <div class="list card">
+                <div class="item item-divider">In next days
+                    <p>
+                        {{current.daily.summary}}
+                    </p>
+                </div>
             </div>
         </div>
         </div>

@@ -8,9 +8,10 @@ angular.module('starter.controllers', ['ionic']).constant('FORECASTIO_KEY', '025
     //call getCurrentWeather method in factory ‘Weather’
     Weather.getCurrentWeather(latitude, longitude).then(function(resp) {
       $scope.current = resp.data;
-      var minutedata = resp.data.minutely.data;
-      var hoursdata = resp.data.hourly.data;
-      console.log('GOT CURRENT', $scope.current);
+      DataStore.data = $scope.current;
+      var minutedata = DataStore.data.minutely.data;
+      var hoursdata = DataStore.data.hourly.data;
+      console.log('GOT CURRENT', DataStore.data);
       console.log('got c3 test', minutedata);
       console.log('GOT HOURSDATA', hoursdata);
       // chart min 
@@ -56,6 +57,9 @@ angular.module('starter.controllers', ['ionic']).constant('FORECASTIO_KEY', '025
       alert('Unable to get current conditions');
       console.error(error);
     });
+    $scope.changePage = function() {
+      $state.go('tab.settings')
+    }
   }).controller('LocationsCtrl', function($scope, $state, Cities, DataStore) {
     $scope.cities = Cities.all();
     $scope.changeCity = function(cityId) {
@@ -68,6 +72,8 @@ angular.module('starter.controllers', ['ionic']).constant('FORECASTIO_KEY', '025
       DataStore.setLongitude(lgn);
       $state.go('tab.home');
     }
-  }).controller('SettingsCtrl', function($scope) {
-    //manages app settings
+  }).controller('SettingsCtrl', function($scope, $state, Weather, DataStore) {
+    console.log("hi from settings");
+    $scope.current = DataStore.data;
+   console.log('GOT CURRENT', $scope.current);
   });

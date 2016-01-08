@@ -1,9 +1,27 @@
-<ion-view view-title="Account">
-  <ion-content>
-    <ion-list><!--
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>-->
-    </ion-list>
-  </ion-content>
+<ion-view view-title="Detailed Weather" Adding cache-view="false">
+    <ion-content>
+        <ion-list>
+            <div class="list card">
+                <div class="item item-divider">In next hour
+                    <p>
+                        {{current.minutely.summary}}
+                    </p>
+                </div>
+            </div>
+            <div class="list card">
+                <div class="item item-divider">In next 24 hours
+                    <p>
+                        {{current.hourly.summary}}
+                    </p>
+                </div>
+            </div>
+            <div class="list card">
+                <div class="item item-divider">In next days
+                    <p>
+                        {{current.daily.summary}}
+                    </p>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
 </ion-view>

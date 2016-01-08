@@ -18,24 +18,26 @@ var forecastioWeather = ['$q', '$resource', '$http', 'FORECASTIO_KEY',
   }
 ];
 var DataStore = {
+  id: 0,
   city: 'Current Location',
   latitude: 25.7877,
   longitude: -80.2241
 };
-if('geolocation' in navigator){
-   navigator.geolocation.getCurrentPosition(success);
-    // console.log("acquired location");2
-    console.log(DataStore);
+if ('geolocation' in navigator) {
+  navigator.geolocation.getCurrentPosition(success);
+  // console.log("acquired location");2
+  console.log(DataStore);
 }
-function success(pos){
-   DataStore.latitude = pos.coords.latitude;
-   DataStore.longitude = pos.coords.longitude;
-   //DataStore.latitude = latitude;
-   console.log(DataStore);
+
+function success(pos) {
+  DataStore.latitude = pos.coords.latitude;
+  DataStore.longitude = pos.coords.longitude;
+  //DataStore.latitude = latitude;
+  console.log(DataStore);
 }
 angular.module('starter.services', ['ngResource']).factory('Cities', function() {
   var cities = [{
-    id: 0,
+    id: 7,
     name: 'Miami',
     lat: 25.7877,
     lgn: -80.2241
@@ -79,10 +81,8 @@ angular.module('starter.services', ['ngResource']).factory('Cities', function() 
       return cities[cityId];
     }
   }
-}).
-factory('DataStore', function() {
+}).factory('DataStore', function() {
   //create datastore with default values
-
   DataStore.setCity = function(value) {
     DataStore.city = value;
   };
